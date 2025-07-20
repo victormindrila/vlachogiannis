@@ -1,0 +1,20 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add scroll-margin-top to account for the fixed header */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+#header-title {
+  font-family: "Press Start 2P", cursive;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.min-h-40 {
+  min-height: 40vh;
+}
