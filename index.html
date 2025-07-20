@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+  x-data
+  :class="$store.mobileMenu.isOpen ? 'overflow-hidden' : ''"
+  lang="en"
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +12,7 @@
   </head>
   <body class="min-h-screen bg-white font-sans">
     <!-- Header -->
-    <header class="header bg-white shadow-sm absolute sticky w-full top-0 z-50">
+    <header class="header bg-white shadow-lg absolute sticky w-full top-0 z-50">
       <div class="nav-container border-b border-gray-200 mx-auto px-4 py-4">
         <div class="flex items-center justify-between">
           <!-- Logo -->
@@ -46,9 +50,13 @@
           </nav>
 
           <!-- Mobile Menu Button -->
-          <button class="md:hidden" id="mobile-menu-btn">
+          <button
+            class="md:hidden"
+            id="mobile-menu-btn"
+            x-data
+            @click="$store.mobileMenu.toggle()"
+          >
             <svg
-              id="menu-icon"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -60,56 +68,73 @@
               stroke-linejoin="round"
               class="h-6 w-6"
             >
-              <line x1="4" x2="20" y1="12" y2="12" />
-              <line x1="4" x2="20" y1="6" y2="6" />
-              <line x1="4" x2="20" y1="18" y2="18" />
-            </svg>
-            <svg
-              id="close-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="h-6 w-6 hidden"
-            >
-              <path d="M18 6 6 18" />
-              <path d="m6 6 12 12" />
+              <!-- Top line -->
+              <line
+                x1="4"
+                x2="20"
+                y1="6"
+                y2="6"
+                :style="$store.mobileMenu.isOpen ? 'transform: rotate(45deg) translateY(6px); transform-origin: 12px 12px;' : 'transform-origin: 12px 12px;'"
+                class="transition-all duration-300"
+              />
+              <!-- Middle line -->
+              <line
+                x1="4"
+                x2="20"
+                y1="12"
+                y2="12"
+                :class="$store.mobileMenu.isOpen ? 'opacity-0' : 'opacity-100'"
+                class="transition-opacity duration-300"
+              />
+              <!-- Bottom line -->
+              <line
+                x1="4"
+                x2="20"
+                y1="18"
+                y2="18"
+                :style="$store.mobileMenu.isOpen ? 'transform: rotate(-45deg) translateY(-6px); transform-origin: 12px 12px;' : 'transform-origin: 12px 12px;'"
+                class="transition-all duration-300"
+              />
             </svg>
           </button>
         </div>
 
         <!-- Mobile Navigation -->
         <nav
-          class="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg z-40 overflow-hidden transition-[height] duration-300 ease-out max-h-0 min-h-0"
+          x-data
+          x-show="$store.mobileMenu.isOpen"
+          @click.outside="$store.mobileMenu.hideMenu()"
+          @keydown.escape.window="$store.mobileMenu.hideMenu()"
+          x-transition
+          class="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg z-40 overflow-hidden"
           id="mobile-menu"
         >
           <div class="mx-auto px-4 py-6">
             <div class="flex flex-col space-y-4">
               <a
                 href="#home"
+                @click="$store.mobileMenu.hideMenu()"
                 class="text-gray-600 py-2 mt-0 border-b border-gray-100 last:border-b-0"
               >
                 Home
               </a>
               <a
                 href="#gallery"
+                @click="$store.mobileMenu.hideMenu()"
                 class="text-gray-600 py-2 mt-0 border-b border-gray-100 last:border-b-0"
               >
                 Gallery
               </a>
               <a
                 href="#amenities"
+                @click="$store.mobileMenu.hideMenu()"
                 class="text-gray-600 py-2 mt-0 border-b border-gray-100 last:border-b-0"
               >
                 Amenities
               </a>
               <a
                 href="#contact"
+                @click="$store.mobileMenu.hideMenu()"
                 class="text-gray-600 py-2 mt-0 last:border-b-0"
               >
                 Contact
