@@ -1,7 +1,8 @@
 import "virtual:uno.css";
 import "./style.css";
 import Alpine from "alpinejs";
-import { lightbox } from "./photo-swipe.js";
+import { lightbox } from "./lightbox.js";
+import { thumbnails } from "./utils/globs";
 
 Alpine.store("mobileMenu", {
   isOpen: false,
@@ -20,5 +21,14 @@ Alpine.store("mobileMenu", {
   },
 });
 
+Alpine.data("galleryThumbnails", () => {
+  return {
+    thumbnails,
+  };
+});
+
 Alpine.start();
+
 lightbox.init();
+
+window.pswpLightbox = lightbox;

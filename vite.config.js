@@ -2,20 +2,12 @@ import { defineConfig } from "vite";
 import legacy from "@vitejs/plugin-legacy";
 import unocss from "unocss/vite";
 import yearPlugin from "@8hobbies/vite-plugin-year";
-
+import htmlMinifier from "vite-plugin-html-minifier";
 import webfontDownload from "vite-plugin-webfont-dl";
+import { imagetools } from "vite-imagetools";
 
 const HOST = "localhost";
 const PORT = 3000;
-
-const enTranslations = {
-  hello: "Hello",
-  keyWithIcon: "With icon - {icon}",
-};
-
-const frTranslations = {
-  hello: "Bonjour",
-};
 
 export default defineConfig({
   preview: {
@@ -37,5 +29,11 @@ export default defineConfig({
     // }),
     unocss(),
     yearPlugin(),
+    htmlMinifier({
+      minify: true,
+    }),
+    imagetools({
+      removeMetadata: true,
+    }),
   ],
 });
