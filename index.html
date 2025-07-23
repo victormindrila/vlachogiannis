@@ -5,6 +5,9 @@
   lang="en"
 >
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aegean Breeze Hotel - Greek Seaside Paradise</title>
     <link
       rel="preload"
       href="/assets/images/hero.jpg"
@@ -17,14 +20,11 @@
       as="image"
       media="(width <= 767px)"
     />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aegean Breeze Hotel - Greek Seaside Paradise</title>
     <script type="module" src="/main.js"></script>
   </head>
   <body class="min-h-screen bg-white font-sans">
     <!-- Header -->
-    <header class="header bg-white shadow-lg absolute sticky w-full top-0 z-50">
+    <header class="header">
       <div class="nav-container border-b border-gray-200 mx-auto px-4 py-4">
         <div class="flex items-center justify-between">
           <!-- Logo -->
@@ -160,7 +160,7 @@
     <!-- Hero Section -->
     <section
       id="home"
-      class="relative h-screen flex items-center justify-center"
+      class="relative h-screen flex items-center justify-center mt-[-73px]"
     >
       <div class="absolute inset-0">
         <picture>
@@ -187,11 +187,7 @@
           Your dream vacation awaits at our beautiful hotel overlooking the
           Aegean Sea.
         </p>
-        <button
-          class="bg-hotel-green hover:bg-hotel-lime text-white px-8 py-3 text-lg rounded-lg transition-colors duration-300 cursor-pointer"
-        >
-          Book Your Stay
-        </button>
+        <button class="primary-btn">Book Your Stay</button>
       </div>
     </section>
 
@@ -209,9 +205,10 @@
         </div>
 
         <div
-          class="pswp-gallery grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto"
+          class="pswp-gallery"
           id="gallery--mixed-source"
           x-data="galleryThumbnails()"
+          x-intersect.once="lightboxInit()"
         >
           <template x-for="(image, index) in thumbnails" :key="image.id">
             <a
@@ -219,16 +216,44 @@
               :data-id="image.id"
               :href="image.src"
               target="_blank"
-              class="block aspect-[4/3] overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+              class="gallery-item"
             >
               <img
                 :src="image.src"
                 :alt="`Hotel gallery image ${index + 1}`"
                 loading="lazy"
-                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                class="gallery-image"
               />
             </a>
           </template>
+        </div>
+
+        <!-- View More Button -->
+        <div class="text-center mt-8">
+          <button
+            x-data="galleryThumbnails()"
+            class="primary-btn"
+            @click="pswpLightbox.loadAndOpen(thumbnails.length)"
+          >
+            <span>View More Images</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="ml-2"
+            >
+              <path d="m21 21-6-6m6 6v-4.8m0 4.8h-4.8" />
+              <path d="M3 16.2V21m0 0h4.8M3 21l6-6" />
+              <path d="M21 7.8V3m0 0h-4.8M21 3l-6 6" />
+              <path d="M3 7.8V3m0 0h4.8M3 3l6 6" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
@@ -246,14 +271,10 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div
-            class="bg-white border-none shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg"
-          >
+        <div class="amenities-grid">
+          <div class="amenity-card">
             <div class="p-6 text-center">
-              <div
-                class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-hotel-green to-hotel-teal rounded-full flex items-center justify-center"
-              >
+              <div class="amenity-icon">
                 <div class="i-heroicons-wifi text-white text-2xl"></div>
               </div>
               <h3 class="text-xl font-semibold text-gray-800 mb-2">
@@ -265,13 +286,9 @@
             </div>
           </div>
 
-          <div
-            class="bg-white border-none shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg"
-          >
+          <div class="amenity-card">
             <div class="p-6 text-center">
-              <div
-                class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-hotel-green to-hotel-teal rounded-full flex items-center justify-center"
-              >
+              <div class="amenity-icon">
                 <div class="i-heroicons-truck text-white text-2xl"></div>
               </div>
               <h3 class="text-xl font-semibold text-gray-800 mb-2">
@@ -281,13 +298,9 @@
             </div>
           </div>
 
-          <div
-            class="bg-white border-none shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg"
-          >
+          <div class="amenity-card">
             <div class="p-6 text-center">
-              <div
-                class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-hotel-green to-hotel-teal rounded-full flex items-center justify-center"
-              >
+              <div class="amenity-icon">
                 <div
                   class="i-heroicons-building-storefront text-white text-2xl"
                 ></div>
@@ -301,13 +314,9 @@
             </div>
           </div>
 
-          <div
-            class="bg-white border-none shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg"
-          >
+          <div class="amenity-card">
             <div class="p-6 text-center">
-              <div
-                class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-hotel-green to-hotel-teal rounded-full flex items-center justify-center"
-              >
+              <div class="amenity-icon">
                 <div class="i-heroicons-sun text-white text-2xl"></div>
               </div>
               <h3 class="text-xl font-semibold text-gray-800 mb-2">
@@ -317,13 +326,9 @@
             </div>
           </div>
 
-          <div
-            class="bg-white border-none shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg"
-          >
+          <div class="amenity-card">
             <div class="p-6 text-center">
-              <div
-                class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-hotel-green to-hotel-teal rounded-full flex items-center justify-center"
-              >
+              <div class="amenity-icon">
                 <div class="i-heroicons-bolt text-white text-2xl"></div>
               </div>
               <h3 class="text-xl font-semibold text-gray-800 mb-2">
@@ -333,13 +338,9 @@
             </div>
           </div>
 
-          <div
-            class="bg-white border-none shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg"
-          >
+          <div class="amenity-card">
             <div class="p-6 text-center">
-              <div
-                class="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-hotel-green to-hotel-teal rounded-full flex items-center justify-center"
-              >
+              <div class="amenity-icon">
                 <div class="i-heroicons-envelope text-white text-2xl"></div>
               </div>
               <h3 class="text-xl font-semibold text-gray-800 mb-2">
