@@ -115,6 +115,7 @@
         <nav
           x-cloak
           x-show="$store.mobileMenu.isOpen"
+          x-trap="$store.mobileMenu.isOpen"
           @click.outside="$store.mobileMenu.hideMenu()"
           @keydown.escape.window="$store.mobileMenu.hideMenu()"
           x-transition

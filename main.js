@@ -2,6 +2,8 @@ import "virtual:uno.css";
 import "./style.css";
 import Alpine from "alpinejs";
 import intersect from "@alpinejs/intersect";
+import focus from "@alpinejs/focus";
+
 import { lightbox } from "./lightbox.js";
 import { thumbnails } from "./utils/globs";
 
@@ -34,6 +36,7 @@ Alpine.data("galleryThumbnails", () => {
 });
 
 Alpine.plugin(intersect);
+Alpine.plugin(focus);
 
 Alpine.start();
 
