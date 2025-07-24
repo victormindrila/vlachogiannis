@@ -1,7 +1,6 @@
 import "virtual:uno.css";
 import "./style.css";
 import Alpine from "alpinejs";
-import intersect from "@alpinejs/intersect";
 import focus from "@alpinejs/focus";
 
 import { lightbox } from "./lightbox.js";
@@ -27,17 +26,13 @@ Alpine.store("mobileMenu", {
 Alpine.data("galleryThumbnails", () => {
   return {
     thumbnails,
-
-    lightboxInit() {
-      lightbox.init();
-      import("photoswipe");
-    },
   };
 });
 
-Alpine.plugin(intersect);
 Alpine.plugin(focus);
 
 Alpine.start();
+
+lightbox.init();
 
 window.pswpLightbox = lightbox;

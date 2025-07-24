@@ -205,7 +205,6 @@
           class="pswp-gallery"
           id="gallery--mixed-source"
           x-data="galleryThumbnails()"
-          x-intersect.once="lightboxInit()"
         >
           <template x-for="(image, index) in thumbnails" :key="image.id">
             <a
