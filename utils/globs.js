@@ -1,39 +1,39 @@
-import { getImagesWithMetadata, combineAssets } from "./images";
+import { getImagesWithMetadata, combineAssets } from './images';
 
 /********
  * Full Images
  *********/
 
 const fullImageAssets = import.meta.glob(
-  "../assets/images/gallery/**/*.{jpg,jpeg,png}",
-  { eager: true, import: "default" }
+  '../assets/images/gallery/**/*.{jpg,jpeg,png}',
+  { eager: true, import: 'default' }
 );
 const fullImagesHeights = import.meta.glob(
-  "../assets/images/gallery/**/*.{jpg,jpeg,png}",
-  { eager: true, query: "as=metadata", import: "height" }
+  '../assets/images/gallery/**/*.{jpg,jpeg,png}',
+  { eager: true, query: 'as=metadata', import: 'height' }
 );
 const fullImagesWidths = import.meta.glob(
-  "../assets/images/gallery/**/*.{jpg,jpeg,png}",
-  { eager: true, query: "as=metadata", import: "width" }
+  '../assets/images/gallery/**/*.{jpg,jpeg,png}',
+  { eager: true, query: 'as=metadata', import: 'width' }
 );
 
 const previewImageAssets = import.meta.glob(
-  "../assets/images/gallery/preview/*.{jpg,jpeg,png}",
-  { eager: true, import: "default" }
+  '../assets/images/gallery/preview/*.{jpg,jpeg,png}',
+  { eager: true, import: 'default' }
 );
 
 const previewImagesHeights = import.meta.glob(
-  "../assets/images/gallery/preview/*.{jpg,jpeg,png}",
+  '../assets/images/gallery/preview/*.{jpg,jpeg,png}',
   {
     eager: true,
-    query: "as=metadata",
-    import: "height",
+    query: 'as=metadata',
+    import: 'height'
   }
 );
 
 const previewImagesWidths = import.meta.glob(
-  "../assets/images/gallery/preview/*.{jpg,jpeg,png}",
-  { eager: true, query: "as=metadata", import: "width" }
+  '../assets/images/gallery/preview/*.{jpg,jpeg,png}',
+  { eager: true, query: 'as=metadata', import: 'width' }
 );
 
 const fullImagesMetadata = combineAssets(fullImagesHeights, fullImagesWidths);
@@ -52,21 +52,21 @@ export const fullImages = getImagesWithMetadata(
  *********/
 
 const previewThumbnails = import.meta.glob(
-  "../assets/images/gallery/preview/*.{jpg,jpeg,png}",
-  { eager: true, query: "w=360&q=70", import: "default" }
+  '../assets/images/gallery/preview/*.{jpg,jpeg,png}',
+  { eager: true, query: 'w=720&q=75', import: 'default' }
 );
 
 const previewThumbnailHeights = import.meta.glob(
-  "../assets/images/gallery/preview/*.{jpg,jpeg,png}",
-  { eager: true, query: "as=metadata&w=360&q=70", import: "height" }
+  '../assets/images/gallery/preview/*.{jpg,jpeg,png}',
+  { eager: true, query: 'as=metadata&w=720&q=75', import: 'height' }
 );
 
 const previewThumbnailWidths = import.meta.glob(
-  "../assets/images/gallery/preview/*.{jpg,jpeg,png}",
+  '../assets/images/gallery/preview/*.{jpg,jpeg,png}',
   {
     eager: true,
-    query: "as=metadata&w=360&q=70",
-    import: "width",
+    query: 'as=metadata&w=720&q=75',
+    import: 'width'
   }
 );
 
