@@ -30,8 +30,8 @@ export default defineConfig({
   },
   plugins: [
     webfontDownload([
-      'https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap',
-      'https://fonts.googleapis.com/css2?family=Fira+Code&display=swap'
+      'https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap',
+      'https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap'
     ]),
     legacy({
       targets: ['defaults', 'not IE 11']

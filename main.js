@@ -1,12 +1,12 @@
-import "virtual:uno.css";
-import "./style.css";
-import Alpine from "alpinejs";
-import focus from "@alpinejs/focus";
+import 'virtual:uno.css';
+import './style.css';
+import Alpine from 'alpinejs';
+import focus from '@alpinejs/focus';
 
-import { lightbox } from "./lightbox.js";
-import { thumbnails } from "./utils/globs";
+import { lightbox } from './lightbox.js';
+import { thumbnails } from './utils/globs';
 
-Alpine.store("mobileMenu", {
+Alpine.store('mobileMenu', {
   isOpen: false,
 
   showMenu() {
@@ -18,14 +18,13 @@ Alpine.store("mobileMenu", {
   },
 
   toggle() {
-    console.log("toggle");
     this.isOpen = !this.isOpen;
-  },
+  }
 });
 
-Alpine.data("galleryThumbnails", () => {
+Alpine.data('galleryThumbnails', () => {
   return {
-    thumbnails,
+    thumbnails
   };
 });
 
