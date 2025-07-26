@@ -14,7 +14,8 @@
     "vite": "^7.0.5",
     "vite-imagetools": "^7.1.0",
     "vite-plugin-html-minifier": "^1.0.5",
-    "vite-plugin-webfont-dl": "^3.11.0"
+    "vite-plugin-webfont-dl": "^3.11.0",
+    "wrangler": "^4.26.0"
   },
   "dependencies": {
     "@alpinejs/focus": "^3.14.9",
