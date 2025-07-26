@@ -56,14 +56,17 @@ export default defineConfig({
       'gallery-item',
       'block aspect-[4/3] overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300'
     ],
-    ['amenities-grid', 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'],
+    [
+      'amenities-grid',
+      'grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-8'
+    ],
     [
       'amenity-card',
       'bg-white border-none shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg'
     ],
     [
       'amenity-icon',
-      'w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-hotel-green to-hotel-teal rounded-full flex items-center justify-center'
+      'w-12 h-12 mx-auto mb-4 bg-gradient-to-r from-hotel-green to-hotel-teal rounded-full flex items-center justify-center'
     ],
     [
       'primary-btn',
