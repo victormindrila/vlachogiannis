@@ -289,6 +289,7 @@
                 x-anchor="$refs.button"
                 x-show="open"
                 x-cloak
+                @click.outside="open = false"
                 class="bg-gray-700 text-gray-300 shadow-lg mt-2 px-4 py-2 rounded-lg"
               >
                 Free public parking is available at a location nearby
