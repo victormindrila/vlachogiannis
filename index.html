@@ -64,6 +64,7 @@
             id="mobile-menu-btn"
             x-data
             @click="$store.mobileMenu.toggle()"
+            :aria-label="$store.mobileMenu.isOpen ? 'Close Menu' : 'Open menu'"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
