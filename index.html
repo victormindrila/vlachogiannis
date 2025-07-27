@@ -265,13 +265,28 @@
           class="grid grid-cols-2 md:grid-cols-[repeat(auto-fit,minmax(220px,2fr))] gap-4 md:gap-8"
         >
           <div class="amenity-card">
+            <div x-data="{ open: false }" class="absolute z-10 right-0 p-3">
+              <button
+                x-ref="button"
+                @click="open = ! open"
+                class="i-heroicons-information-circle text-gray-500 text-xl"
+              ></button>
+              <div
+                x-cloak
+                x-transition
+                x-show="open"
+                x-anchor..bottom-start="$refs.button"
+                @click.outside="open = false"
+                class="amenity-info-popover"
+              >
+                WIFI is available in all areas and is free of charge.
+              </div>
+            </div>
             <div class="p-6 text-center">
               <div class="amenity-icon">
                 <div class="i-material-symbols-wifi text-white text-2xl"></div>
               </div>
-              <h3 class="text-xl font-semibold text-gray-800 mb-2">
-                Free WiFi
-              </h3>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Internet</h3>
             </div>
           </div>
 
@@ -288,7 +303,7 @@
                 x-show="open"
                 x-anchor..bottom-start="$refs.button"
                 @click.outside="open = false"
-                class="bg-white text-gray-800 shadow-lg mt-2 px-4 py-2 rounded-lg w-[12rem]"
+                class="amenity-info-popover"
               >
                 Free public parking is available at a location nearby
                 (reservation is not needed).
@@ -307,6 +322,25 @@
           </div>
 
           <div class="amenity-card">
+            <div x-data="{ open: false }" class="absolute z-10 right-0 p-3">
+              <button
+                x-ref="button"
+                @click="open = ! open"
+                class="i-heroicons-information-circle text-gray-500 text-xl"
+              ></button>
+              <div
+                x-cloak
+                x-transition
+                x-show="open"
+                x-anchor..bottom-start="$refs.button"
+                @click.outside="open = false"
+                class="amenity-info-popover"
+              >
+                <p>Coffee house on site</p>
+                <p>Breakfast</p>
+                <p>Bar</p>
+              </div>
+            </div>
             <div class="p-6 text-center">
               <div class="amenity-icon">
                 <div
@@ -314,19 +348,8 @@
                 ></div>
               </div>
               <h3 class="text-xl font-semibold text-gray-800 mb-2">
-                Breakfast
+                Food & Drink
               </h3>
-            </div>
-          </div>
-
-          <div class="amenity-card">
-            <div class="p-6 text-center">
-              <div class="amenity-icon">
-                <div
-                  class="i-material-symbols-balcony text-white text-2xl"
-                ></div>
-              </div>
-              <h3 class="text-xl font-semibold text-gray-800 mb-2">Balcony</h3>
             </div>
           </div>
 
@@ -343,9 +366,40 @@
                 x-show="open"
                 x-anchor..bottom-start="$refs.button"
                 @click.outside="open = false"
-                class="bg-white text-gray-800 shadow-lg mt-2 px-4 py-2 rounded-lg w-[12rem]"
+                class="amenity-info-popover"
               >
-                200m to Skala Prinos Beach
+                <p>Balcony</p>
+                <p>Terrace</p>
+                <p>Garden</p>
+                <p>Outdoor furniture</p>
+              </div>
+            </div>
+            <div class="p-6 text-center">
+              <div class="amenity-icon">
+                <div class="i-material-symbols-deck text-white text-2xl"></div>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Outdoors</h3>
+            </div>
+          </div>
+
+          <div class="amenity-card">
+            <div x-data="{ open: false }" class="absolute z-10 right-0 p-3">
+              <button
+                x-ref="button"
+                @click="open = ! open"
+                class="i-heroicons-information-circle text-gray-500 text-xl"
+              ></button>
+              <div
+                x-cloak
+                x-transition
+                x-show="open"
+                x-anchor..bottom-start="$refs.button"
+                @click.outside="open = false"
+                class="amenity-info-popover"
+              >
+                <p>Skala Prinos Beach 150m</p>
+                <p>Dasillio Beach 200m</p>
+                <p>Aphrodite Beach 250m</p>
               </div>
             </div>
             <div class="p-6 text-center">
@@ -356,30 +410,6 @@
               </div>
               <h3 class="text-xl font-semibold text-gray-800 mb-2">
                 Beach Access
-              </h3>
-            </div>
-          </div>
-
-          <div class="amenity-card">
-            <div class="p-6 text-center">
-              <div class="amenity-icon">
-                <div class="i-material-symbols-deck text-white text-2xl"></div>
-              </div>
-              <h3 class="text-xl font-semibold text-gray-800 mb-2">
-                Terrace With Garden
-              </h3>
-            </div>
-          </div>
-
-          <div class="amenity-card">
-            <div class="p-6 text-center">
-              <div class="amenity-icon">
-                <div
-                  class="i-material-symbols-landscape-2 text-white text-2xl"
-                ></div>
-              </div>
-              <h3 class="text-xl font-semibold text-gray-800 mb-2">
-                Garden View
               </h3>
             </div>
           </div>
@@ -398,6 +428,27 @@
           </div>
 
           <div class="amenity-card">
+            <div x-data="{ open: false }" class="absolute z-10 right-0 p-3">
+              <button
+                x-ref="button"
+                @click="open = ! open"
+                class="i-heroicons-information-circle text-gray-500 text-xl"
+              ></button>
+              <div
+                x-cloak
+                x-transition
+                x-show="open"
+                x-anchor..bottom-start="$refs.button"
+                @click.outside="open = false"
+                class="amenity-info-popover"
+              >
+                <p>Family rooms</p>
+                <p>Private bathroom</p>
+                <p>Hairdryer</p>
+                <p>Refrigerator</p>
+                <p>Flat screen TV</p>
+              </div>
+            </div>
             <div class="p-6 text-center">
               <div class="amenity-icon">
                 <div
@@ -405,17 +456,40 @@
                 ></div>
               </div>
               <h3 class="text-xl font-semibold text-gray-800 mb-2">
-                Family rooms
+                Room amenities
               </h3>
             </div>
           </div>
 
           <div class="amenity-card">
+            <div x-data="{ open: false }" class="absolute z-10 right-0 p-3">
+              <button
+                x-ref="button"
+                @click="open = ! open"
+                class="i-heroicons-information-circle text-gray-500 text-xl"
+              ></button>
+              <div
+                x-cloak
+                x-transition
+                x-show="open"
+                x-anchor..bottom-start="$refs.button"
+                @click.outside="open = false"
+                class="amenity-info-popover"
+              >
+                <p>Fire extinguishers</p>
+                <p>Smoke alarms</p>
+                <p>Key card access</p>
+              </div>
+            </div>
             <div class="p-6 text-center">
               <div class="amenity-icon">
-                <div class="i-material-symbols-tv text-white text-2xl"></div>
+                <div
+                  class="i-material-symbols-health-and-safety text-white text-2xl"
+                ></div>
               </div>
-              <h3 class="text-xl font-semibold text-gray-800 mb-2">TV</h3>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                Safety&Security
+              </h3>
             </div>
           </div>
         </div>

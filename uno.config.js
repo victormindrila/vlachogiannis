@@ -65,6 +65,10 @@ export default defineConfig({
       'w-12 h-12 mx-auto mb-4 bg-gradient-to-r from-hotel-green to-hotel-teal rounded-full flex items-center justify-center'
     ],
     [
+      'amenity-info-popover',
+      'bg-white text-gray-800 shadow-lg text-xs mt-2 px-4 py-2 rounded-lg w-[12rem]'
+    ],
+    [
       'primary-btn',
       'bg-hotel-green hover:bg-hotel-lime text-white px-8 py-3 text-lg rounded-lg transition-colors duration-300 cursor-pointer inline-flex items-center space-x-2'
     ]
