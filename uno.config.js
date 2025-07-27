@@ -66,7 +66,7 @@ export default defineConfig({
     ],
     [
       'amenity-info-popover',
-      'bg-white text-gray-800 shadow-lg text-xs mt-2 px-4 py-2 rounded-lg w-[12rem]'
+      'bg-white text-gray-800 shadow-lg text-xs px-4 py-2 rounded-lg w-[12rem]'
     ],
     [
       'primary-btn',
