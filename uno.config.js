@@ -57,12 +57,8 @@ export default defineConfig({
       'block aspect-[4/3] overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300'
     ],
     [
-      'amenities-grid',
-      'grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-8'
-    ],
-    [
       'amenity-card',
-      'bg-white border-none shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg'
+      'relative bg-white border-none shadow-sm hover:shadow-lg transition-shadow duration-300 rounded-lg'
     ],
     [
       'amenity-icon',
