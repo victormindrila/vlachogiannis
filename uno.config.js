@@ -58,7 +58,7 @@ export default defineConfig({
     ],
     [
       'amenity-card',
-      'relative bg-white border-none shadow-sm hover:shadow-lg transition-shadow duration-300 rounded-lg'
+      'relative bg-white border-none shadow-sm hover:shadow-lg transition-shadow duration-300 rounded-lg cursor-pointer'
     ],
     [
       'amenity-icon',

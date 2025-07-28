@@ -286,21 +286,25 @@
         <div
           class="grid grid-cols-2 md:grid-cols-[repeat(auto-fit,minmax(220px,2fr))] gap-4 md:gap-8"
         >
-          <div class="amenity-card">
-            <div x-data="{ open: false }" class="absolute z-10 right-0 p-3">
-              <button
-                aria-label="Amenity Info"
-                x-ref="button"
-                @click="open = ! open"
-                class="i-heroicons-information-circle text-gray-500 text-xl cursor-pointer"
-              ></button>
+          <button
+            class="amenity-card"
+            x-data="{ open: false }"
+            @click="open = ! open"
+          >
+            <div class="absolute z-10 right-0 p-3">
+              <div
+                x-ref="infoIcon"
+                class="i-heroicons-information-circle text-gray-500 text-xl"
+              ></div>
               <div
                 x-cloak
                 x-transition
                 x-show="open"
-                x-anchor.offset.8="$refs.button"
+                x-anchor.offset.8="$refs.infoIcon"
                 @click.outside="open = false"
                 class="amenity-info-popover"
+                role="tooltip"
+                aria-live="polite"
               >
                 WIFI is available in all areas and is free of charge.
               </div>
@@ -311,23 +315,27 @@
               </div>
               <h3 class="text-xl font-semibold text-gray-800 mb-2">Internet</h3>
             </div>
-          </div>
+          </button>
 
-          <div class="amenity-card">
-            <div x-data="{ open: false }" class="absolute z-10 right-0 p-3">
-              <button
-                aria-label="Amenity Info"
-                x-ref="button"
-                @click="open = ! open"
-                class="i-heroicons-information-circle text-gray-500 text-xl cursor-pointer"
-              ></button>
+          <button
+            class="amenity-card"
+            x-data="{ open: false }"
+            @click="open = ! open"
+          >
+            <div class="absolute z-10 right-0 p-3">
+              <div
+                x-ref="infoIcon"
+                class="i-heroicons-information-circle text-gray-500 text-xl"
+              ></div>
               <div
                 x-cloak
                 x-transition
                 x-show="open"
-                x-anchor.offset.8="$refs.button"
+                x-anchor.offset.8="$refs.infoIcon"
                 @click.outside="open = false"
                 class="amenity-info-popover"
+                role="tooltip"
+                aria-live="polite"
               >
                 Free public parking is available at a location nearby
                 (reservation is not needed).
@@ -343,23 +351,27 @@
                 Free Parking
               </h3>
             </div>
-          </div>
+          </button>
 
-          <div class="amenity-card">
-            <div x-data="{ open: false }" class="absolute z-10 right-0 p-3">
-              <button
-                aria-label="Amenity Info"
-                x-ref="button"
-                @click="open = ! open"
-                class="i-heroicons-information-circle text-gray-500 text-xl cursor-pointer"
-              ></button>
+          <button
+            class="amenity-card"
+            x-data="{ open: false }"
+            @click="open = ! open"
+          >
+            <div class="absolute z-10 right-0 p-3">
+              <div
+                x-ref="infoIcon"
+                class="i-heroicons-information-circle text-gray-500 text-xl"
+              ></div>
               <div
                 x-cloak
                 x-transition
                 x-show="open"
-                x-anchor.offset.8="$refs.button"
+                x-anchor.offset.8="$refs.infoIcon"
                 @click.outside="open = false"
                 class="amenity-info-popover"
+                role="tooltip"
+                aria-live="polite"
               >
                 <p>Coffee house on site</p>
                 <p>Breakfast</p>
@@ -376,23 +388,27 @@
                 Food & Drink
               </h3>
             </div>
-          </div>
+          </button>
 
-          <div class="amenity-card">
-            <div x-data="{ open: false }" class="absolute z-10 right-0 p-3">
-              <button
-                aria-label="Amenity Info"
-                x-ref="button"
-                @click="open = ! open"
-                class="i-heroicons-information-circle text-gray-500 text-xl cursor-pointer"
-              ></button>
+          <button
+            class="amenity-card"
+            x-data="{ open: false }"
+            @click="open = ! open"
+          >
+            <div class="absolute z-10 right-0 p-3">
+              <div
+                x-ref="infoIcon"
+                class="i-heroicons-information-circle text-gray-500 text-xl"
+              ></div>
               <div
                 x-cloak
                 x-transition
                 x-show="open"
-                x-anchor.offset.8="$refs.button"
+                x-anchor.offset.8="$refs.infoIcon"
                 @click.outside="open = false"
                 class="amenity-info-popover"
+                role="tooltip"
+                aria-live="polite"
               >
                 <p>Balcony</p>
                 <p>Terrace</p>
@@ -406,23 +422,27 @@
               </div>
               <h3 class="text-xl font-semibold text-gray-800 mb-2">Outdoors</h3>
             </div>
-          </div>
+          </button>
 
-          <div class="amenity-card">
-            <div x-data="{ open: false }" class="absolute z-10 right-0 p-3">
-              <button
-                aria-label="Amenity Info"
-                x-ref="button"
-                @click="open = ! open"
-                class="i-heroicons-information-circle text-gray-500 text-xl cursor-pointer"
-              ></button>
+          <button
+            class="amenity-card"
+            x-data="{ open: false }"
+            @click="open = ! open"
+          >
+            <div class="absolute z-10 right-0 p-3">
+              <div
+                x-ref="infoIcon"
+                class="i-heroicons-information-circle text-gray-500 text-xl"
+              ></div>
               <div
                 x-cloak
                 x-transition
                 x-show="open"
-                x-anchor.offset.8="$refs.button"
+                x-anchor.offset.8="$refs.infoIcon"
                 @click.outside="open = false"
                 class="amenity-info-popover"
+                role="tooltip"
+                aria-live="polite"
               >
                 <p>Skala Prinos Beach 150m</p>
                 <p>Dasillio Beach 200m</p>
@@ -439,9 +459,13 @@
                 Beach Access
               </h3>
             </div>
-          </div>
+          </button>
 
-          <div class="amenity-card">
+          <button
+            class="amenity-card"
+            x-data="{ open: false }"
+            @click="open = ! open"
+          >
             <div class="p-6 text-center">
               <div class="amenity-icon">
                 <div
@@ -452,23 +476,27 @@
                 Air Conditioning
               </h3>
             </div>
-          </div>
+          </button>
 
-          <div class="amenity-card">
-            <div x-data="{ open: false }" class="absolute z-10 right-0 p-3">
-              <button
-                aria-label="Amenity Info"
-                x-ref="button"
-                @click="open = ! open"
-                class="i-heroicons-information-circle text-gray-500 text-xl cursor-pointer"
-              ></button>
+          <button
+            class="amenity-card"
+            x-data="{ open: false }"
+            @click="open = ! open"
+          >
+            <div class="absolute z-10 right-0 p-3">
+              <div
+                x-ref="infoIcon"
+                class="i-heroicons-information-circle text-gray-500 text-xl"
+              ></div>
               <div
                 x-cloak
                 x-transition
                 x-show="open"
-                x-anchor.offset.8="$refs.button"
+                x-anchor.offset.8="$refs.infoIcon"
                 @click.outside="open = false"
                 class="amenity-info-popover"
+                role="tooltip"
+                aria-live="polite"
               >
                 <p>Family rooms</p>
                 <p>Private bathroom</p>
@@ -487,23 +515,27 @@
                 Room amenities
               </h3>
             </div>
-          </div>
+          </button>
 
-          <div class="amenity-card">
-            <div x-data="{ open: false }" class="absolute z-10 right-0 p-3">
-              <button
-                aria-label="Amenity Info"
-                x-ref="button"
-                @click="open = ! open"
-                class="i-heroicons-information-circle text-gray-500 text-xl cursor-pointer"
-              ></button>
+          <button
+            class="amenity-card"
+            x-data="{ open: false }"
+            @click="open = ! open"
+          >
+            <div class="absolute z-10 right-0 p-3">
+              <div
+                x-ref="infoIcon"
+                class="i-heroicons-information-circle text-gray-500 text-xl"
+              ></div>
               <div
                 x-cloak
                 x-transition
                 x-show="open"
-                x-anchor.offset.8="$refs.button"
+                x-anchor.offset.8="$refs.infoIcon"
                 @click.outside="open = false"
                 class="amenity-info-popover"
+                role="tooltip"
+                aria-live="polite"
               >
                 <p>Fire extinguishers</p>
                 <p>Smoke alarms</p>
@@ -520,7 +552,7 @@
                 Safety & Security
               </h3>
             </div>
-          </div>
+          </button>
         </div>
       </div>
     </section>
